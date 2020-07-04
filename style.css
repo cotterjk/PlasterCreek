@@ -30,16 +30,18 @@ div#wave_frame {
 }
 
 p {
+    font-family: 'Zilla Slab', serif;
     color: #272312;
 }
 
 #streamflow-text {
     color: white;
-    font-size: 2em;
-    line-height: 1.2em;
+    font-size: 3em;
+    line-height: 1.1;
     position: absolute;
     bottom: 0;
     z-index: 1;
+    padding: 25px;
 }
 
 #discharge-reading {
