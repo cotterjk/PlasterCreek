@@ -38,7 +38,7 @@
 			   $('#discharge').val(json.value.timeSeries[0].values[0].value[0].value);
 			   wavespeed = 500*json.value.timeSeries[0].values[0].value[0].value;
 			   //for getting a color from a gradient by a percentage, look into http://jsfiddle.net/jongobar/sNKWK/
-			   wavecolor = "66a9a1";
+			   wavecolor = "#66a9a1";
 			   animateWave(wavespeed, wavecolor);
 			 },
 		  error : function(XMLHttpRequest, textStatus, errorThrown) {
