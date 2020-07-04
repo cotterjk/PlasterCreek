@@ -1,0 +1,224 @@
+{"name" : "ns1:timeSeriesResponseType",
+"declaredType" : "org.cuahsi.waterml.TimeSeriesResponseType",
+"scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+"value" : {
+  "queryInfo" : {
+    "queryURL" : "http://waterservices.usgs.gov/nwis/iv/format=json&indent=on&sites=04119055&parameterCd=00060,00065&siteStatus=all",
+    "criteria" : {
+      "locationParam" : "[ALL:04119055]",
+      "variableParam" : "[00060, 00065]",
+      "parameter" : [ ]
+    },
+    "note" : [ {
+      "value" : "[ALL:04119055]",
+      "title" : "filter:sites"
+    }, {
+      "value" : "[mode=LATEST, modifiedSince=null]",
+      "title" : "filter:timeRange"
+    }, {
+      "value" : "methodIds=[ALL]",
+      "title" : "filter:methodId"
+    }, {
+      "value" : "2020-07-02T22:59:56.153Z",
+      "title" : "requestDT"
+    }, {
+      "value" : "bf3a2f80-bcb7-11ea-a022-6cae8b663fb6",
+      "title" : "requestId"
+    }, {
+      "value" : "Provisional data are subject to revision. Go to http://waterdata.usgs.gov/nwis/help/?provisional for more information.",
+      "title" : "disclaimer"
+    }, {
+      "value" : "vaas01",
+      "title" : "server"
+    } ]
+  },
+  "timeSeries" : [ {
+    "sourceInfo" : {
+      "siteName" : "PLASTER CREEK AT 28TH STREET AT GRAND RAPIDS, MI",
+      "siteCode" : [ {
+        "value" : "04119055",
+        "network" : "NWIS",
+        "agencyCode" : "USGS"
+      } ],
+      "timeZoneInfo" : {
+        "defaultTimeZone" : {
+          "zoneOffset" : "-05:00",
+          "zoneAbbreviation" : "EST"
+        },
+        "daylightSavingsTimeZone" : {
+          "zoneOffset" : "-04:00",
+          "zoneAbbreviation" : "EDT"
+        },
+        "siteUsesDaylightSavingsTime" : false
+      },
+      "geoLocation" : {
+        "geogLocation" : {
+          "srs" : "EPSG:4326",
+          "latitude" : 42.91280557,
+          "longitude" : -85.650584
+        },
+        "localSiteXY" : [ ]
+      },
+      "note" : [ ],
+      "siteType" : [ ],
+      "siteProperty" : [ {
+        "value" : "ST",
+        "name" : "siteTypeCd"
+      }, {
+        "value" : "04050006",
+        "name" : "hucCd"
+      }, {
+        "value" : "26",
+        "name" : "stateCd"
+      }, {
+        "value" : "26081",
+        "name" : "countyCd"
+      } ]
+    },
+    "variable" : {
+      "variableCode" : [ {
+        "value" : "00060",
+        "network" : "NWIS",
+        "vocabulary" : "NWIS:UnitValues",
+        "variableID" : 45807197,
+        "default" : true
+      } ],
+      "variableName" : "Streamflow, ft&#179;/s",
+      "variableDescription" : "Discharge, cubic feet per second",
+      "valueType" : "Derived Value",
+      "unit" : {
+        "unitCode" : "ft3/s"
+      },
+      "options" : {
+        "option" : [ {
+          "name" : "Statistic",
+          "optionCode" : "00000"
+        } ]
+      },
+      "note" : [ ],
+      "noDataValue" : -999999.0,
+      "variableProperty" : [ ],
+      "oid" : "45807197"
+    },
+    "values" : [ {
+      "value" : [ {
+        "value" : "11.0",
+        "qualifiers" : [ "P" ],
+        "dateTime" : "2020-07-02T17:00:00.000-05:00"
+      } ],
+      "qualifier" : [ {
+        "qualifierCode" : "P",
+        "qualifierDescription" : "Provisional data subject to revision.",
+        "qualifierID" : 0,
+        "network" : "NWIS",
+        "vocabulary" : "uv_rmk_cd"
+      } ],
+      "qualityControlLevel" : [ ],
+      "method" : [ {
+        "methodDescription" : "",
+        "methodID" : 71940
+      } ],
+      "source" : [ ],
+      "offset" : [ ],
+      "sample" : [ ],
+      "censorCode" : [ ]
+    } ],
+    "name" : "USGS:04119055:00060:00000"
+  }, {
+    "sourceInfo" : {
+      "siteName" : "PLASTER CREEK AT 28TH STREET AT GRAND RAPIDS, MI",
+      "siteCode" : [ {
+        "value" : "04119055",
+        "network" : "NWIS",
+        "agencyCode" : "USGS"
+      } ],
+      "timeZoneInfo" : {
+        "defaultTimeZone" : {
+          "zoneOffset" : "-05:00",
+          "zoneAbbreviation" : "EST"
+        },
+        "daylightSavingsTimeZone" : {
+          "zoneOffset" : "-04:00",
+          "zoneAbbreviation" : "EDT"
+        },
+        "siteUsesDaylightSavingsTime" : false
+      },
+      "geoLocation" : {
+        "geogLocation" : {
+          "srs" : "EPSG:4326",
+          "latitude" : 42.91280557,
+          "longitude" : -85.650584
+        },
+        "localSiteXY" : [ ]
+      },
+      "note" : [ ],
+      "siteType" : [ ],
+      "siteProperty" : [ {
+        "value" : "ST",
+        "name" : "siteTypeCd"
+      }, {
+        "value" : "04050006",
+        "name" : "hucCd"
+      }, {
+        "value" : "26",
+        "name" : "stateCd"
+      }, {
+        "value" : "26081",
+        "name" : "countyCd"
+      } ]
+    },
+    "variable" : {
+      "variableCode" : [ {
+        "value" : "00065",
+        "network" : "NWIS",
+        "vocabulary" : "NWIS:UnitValues",
+        "variableID" : 45807202,
+        "default" : true
+      } ],
+      "variableName" : "Gage height, ft",
+      "variableDescription" : "Gage height, feet",
+      "valueType" : "Derived Value",
+      "unit" : {
+        "unitCode" : "ft"
+      },
+      "options" : {
+        "option" : [ {
+          "name" : "Statistic",
+          "optionCode" : "00000"
+        } ]
+      },
+      "note" : [ ],
+      "noDataValue" : -999999.0,
+      "variableProperty" : [ ],
+      "oid" : "45807202"
+    },
+    "values" : [ {
+      "value" : [ {
+        "value" : "3.15",
+        "qualifiers" : [ "P" ],
+        "dateTime" : "2020-07-02T17:00:00.000-05:00"
+      } ],
+      "qualifier" : [ {
+        "qualifierCode" : "P",
+        "qualifierDescription" : "Provisional data subject to revision.",
+        "qualifierID" : 0,
+        "network" : "NWIS",
+        "vocabulary" : "uv_rmk_cd"
+      } ],
+      "qualityControlLevel" : [ ],
+      "method" : [ {
+        "methodDescription" : "",
+        "methodID" : 71939
+      } ],
+      "source" : [ ],
+      "offset" : [ ],
+      "sample" : [ ],
+      "censorCode" : [ ]
+    } ],
+    "name" : "USGS:04119055:00065:00000"
+  } ]
+},
+"nil" : false,
+"globalScope" : true,
+"typeSubstituted" : false
+}
