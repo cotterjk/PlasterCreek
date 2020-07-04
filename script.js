@@ -9,12 +9,15 @@ $('#query').click(function() { //TODO: Shift to on page load, query streamflow a
 	  success: function(json){
 		   $('#discharge').val(json.value.timeSeries[0].values[0].value[0].value);
 		   wavespeed = 500*json.value.timeSeries[0].values[0].value[0].value;
+           $('#discharge-reading').text(json.value.timeSeries[0].values[0].value[0].value);
+		   wavespeed = 500*json.value.timeSeries[0].values[0].value[0].value;
 		   //for getting a color from a gradient by a percentage, look into http://jsfiddle.net/jongobar/sNKWK/
 		   wavecolor = "rgb(102, 169, 161)";
 		   animateWave(wavespeed, wavecolor);
 		 },
 	  error : function(XMLHttpRequest, textStatus, errorThrown) {
 		   $('#discharge').val('-99999');
+           $('#discharge-reading').text('unknown');
 		   wavecolor = "rgb(87, 75, 99)";
 		   animateWave(100, wavecolor);
 	  }

@@ -11,20 +11,10 @@
 	<title>Streamflow - Plaster Creek x 28th St.</title>
 </head>
 <body>
-	<h1>USGS Plaster Creek Water Services AJAX Example</h1>
-	<form id="form1" method="post" action="">
-        <table width="100%" border="0">
-		  <tr>
-			<td><label for="discharge"><strong>Latest Streamflow ft.<sup>3</sup>/sec</strong></label></td>
-		  </tr>
-		  <tr>
-			<td><input id="discharge" size="7" readonly="readonly" /></td>
-		  </tr>
-        </table>
-      <p>
-            <input type="button" name="query" id="query" value="API Request" />
-      </p>
-	</form>
+	<p id="streamflow-text">Plaster Creek is flowing at<br/>
+<span id="discharge-reading">11.6</span> cubic feet per second.</p>
+	<input id="discharge" size="7" readonly="readonly" /></td>
+	<input type="button" name="query" id="query" value="API Request" />
 	<div id="wave_frame"></div>
 
 	<!-- Add functionality script at end so everything is imported first I guess -->

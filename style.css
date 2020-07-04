@@ -1,8 +1,47 @@
+/* COLOR PALLETE:
+grey: #bfbca9
+brown: #272312
+dark green: #314309
+teal: #477761
+light blue: #66a9a1
+*/
+
 * { margin:0; padding:0;}
+
+/* bootstrap resets */
+[class*='col-'] {
+    padding:0;
+    margin:0;
+}
+[class*='row'] {
+    padding:0;
+    margin:0;
+}
+
+html, body {
+    background-color: #bfbca9;
+}
 
 div#wave_frame {
     width: 100%;
     position: absolute;
     bottom: 0;
     background: #ddd;
+}
+
+p {
+    color: #272312;
+}
+
+#streamflow-text {
+    color: white;
+    font-size: 2em;
+    line-height: 1.2em;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+}
+
+#discharge-reading {
+    font-weight: bold;
 }
