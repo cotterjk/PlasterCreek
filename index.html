@@ -26,7 +26,7 @@
 
 <script type="text/javascript">
 
-	var wavespeed = 2000;
+	var wavespeed = 200;
 	var wavecolor = 'red';
 	// USGS Ajax Query
 	$('#query').click(function() { //TODO: Shift to on page load, query streamflow and animate from result
@@ -38,12 +38,13 @@
 			   $('#discharge').val(json.value.timeSeries[0].values[0].value[0].value);
 			   wavespeed = 500*json.value.timeSeries[0].values[0].value[0].value;
 			   //for getting a color from a gradient by a percentage, look into http://jsfiddle.net/jongobar/sNKWK/
-			   wavecolor = "#66a9a1";
+			   wavecolor = "rgb(102, 169, 161)";
 			   animateWave(wavespeed, wavecolor);
 			 },
 		  error : function(XMLHttpRequest, textStatus, errorThrown) {
 			   $('#discharge').val('-99999');
-			   animateWave(1000, 'black');
+			   wavecolor = "rgb(87, 75, 99)";
+			   animateWave(100, wavecolor);
 		  }
 		});
 	});
