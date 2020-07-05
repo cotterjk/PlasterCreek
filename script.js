@@ -40,7 +40,9 @@ function animateWave(discharge_reading) {
     // 0–100 -> gradient percentage
     wavecolor = 'black'
     // 0–100 -> 5000–400 (smaller for higher discharges)
-    wavespeed = 3000
+    //Wavespeed only updates once, only changes on page reload
+    wavespeed = 5000-(dis_lin*((5000-400)/100))
+    console.log("wavespeed: " + wavespeed);
     // 0–100 -> 5–100%ish window height
     waveheight_str = window.innerHeight*(dis_lin/100)
    //for getting a color from a gradient by a percentage, look into http://jsfiddle.net/jongobar/sNKWK/
