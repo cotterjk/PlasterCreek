@@ -25,6 +25,8 @@ div#wave_frame {
 p {
     font-family: 'Zilla Slab', serif;
     color: #272312;
+    font-size: 3em;
+    line-height: 1.1;
 }
 
 #streamflow-text-line {
@@ -42,8 +44,6 @@ p {
 
 #streamflow-text {
     color: white;
-    font-size: 3em;
-    line-height: 1.1;
 }
 
 #discharge-reading {
@@ -86,5 +86,21 @@ p {
 
 #logo-container svg:hover{
     opacity: 0.5;
+    transition: ease .3s;
+}
+
+#about-container {
+    width: 4em;
+    position: absolute;
+    top: 30px;
+    right:25px;
+}
+
+#about-mark {
+    text-align:right;
+    transition: ease .3s;
+}
+#about-mark:hover {
+    opacity:0.5;
     transition: ease .3s;
 }
