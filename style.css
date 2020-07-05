@@ -36,6 +36,10 @@ p {
     color: #272312;
 }
 
+svg {
+    
+}
+
 #info-text {
     position: absolute;
     bottom: 0;
