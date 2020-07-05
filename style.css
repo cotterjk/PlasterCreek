@@ -29,6 +29,7 @@ p {
 
 #info-text {
     position: absolute;
+    width: 100%;
     bottom: 0;
     z-index: 1;
     padding: 25px;
@@ -41,5 +42,27 @@ p {
 }
 
 #discharge-reading {
+    font-weight: bold;
+}
+
+#streamflow-details {
+    color: white;
+    font-size: 1.1em;
+    line-height: 1.1;
+    text-align: right;
+    padding-top: 0.7em;
+}
+
+@media only screen and (max-width: 768px) {
+  #streamflow-details {
+      text-align: left;
+  }
+  #streamflow-text {
+      font-size: 2.5em;
+      margin-bottom: 0px;
+  }
+}
+
+#reading-time {
     font-weight: bold;
 }
