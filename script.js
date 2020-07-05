@@ -17,8 +17,8 @@ $('#query').click(function() { //TODO: Shift to on page load, query streamflow a
 		 },
 	  error : function(XMLHttpRequest, textStatus, errorThrown) {
            $('#discharge-reading').text('unknown');
-           var fake_discharges = [8,11,20,500,900];
-		   animateWave(fake_discharges[Math.floor(Math.random()*5)]);
+           var fake_discharges = [2,8,11,20,500,900,1800];
+		   animateWave(fake_discharges[Math.floor(Math.random()*7)]);
 	  }
 	});
 });
@@ -35,10 +35,11 @@ wavePath = svg_canvas.path('M0,224L48,224C96,224,192,224,288,197.3C384,171,480,1
 function animateWave(discharge_reading) {
     console.log("discharge reading: " + discharge_reading);
     //6-1030 -> 0–100 (flattens exponential)
-    dis_lin = Math.log2(discharge_reading-5)*10;
+    dis_lin = Math.log2(Math.abs(discharge_reading-5))*10;
     console.log("dis. linear: " + dis_lin);
     // 0–100 -> gradient percentage
-    wavecolor = 'black'
+    wavecolor = pickRGB([26,41,62], [165,221,237], dis_lin/100);
+    console.log("wavecolor: " + 'rgb('+wavecolor.join()+')');
     // 0–100 -> 5000–400 (smaller for higher discharges)
     //Wavespeed only updates once, only changes on page reload
     wavespeed = 5000-(dis_lin*((5000-400)/100))
@@ -46,10 +47,21 @@ function animateWave(discharge_reading) {
     // 0–100 -> 5–100%ish window height
     waveheight_str = window.innerHeight*(dis_lin/100)
    //for getting a color from a gradient by a percentage, look into http://jsfiddle.net/jongobar/sNKWK/
-    wavePath.attr({ fill: wavecolor, stroke:'none' });
-	wavePath.animate(wavespeed).ease('<>')
-	  .plot('M0,256L48,229.3C96,203,192,149,288,112C384,75,480,53,576,53.3C672,53,768,75,864,80C960,85,1056,75,1152,69.3C1248,64,1344,64,1392,64L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z')
-	  // .plot('M0,128L48,133.3C96,139,192,149,288,128C384,107,480,53,576,53.3C672,53,768,107,864,149.3C960,192,1056,224,1152,245.3C1248,267,1344,277,1392,282.7L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z')
-	  .loop(true, true)
+    wavePath.attr({ fill: 'rgb('+wavecolor.join()+')', stroke:'none'});
+    wavePath.animate(wavespeed).ease('<>')
+      .plot('M0,256L48,229.3C96,203,192,149,288,112C384,75,480,53,576,53.3C672,53,768,75,864,80C960,85,1056,75,1152,69.3C1248,64,1344,64,1392,64L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z')
+      .loop(true, true)
     svg_canvas.attr("height", waveheight_str);
   }
+
+//Taken from http://jsfiddle.net/vksn3yLL/
+  function pickRGB(color1, color2, weight) {
+    var p = weight;
+    var w = p * 2 - 1;
+    var w1 = (w/1+1) / 2;
+    var w2 = 1 - w1;
+    var rgb = [Math.round(color1[0] * w1 + color2[0] * w2),
+        Math.round(color1[1] * w1 + color2[1] * w2),
+        Math.round(color1[2] * w1 + color2[2] * w2)];
+    return rgb;
+}
