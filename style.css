@@ -27,6 +27,7 @@ div#wave_frame {
     position: absolute;
     bottom: 0;
     background: #ddd;
+    z-index: -1;
 }
 
 /* TODO Scale SVG to page size */
@@ -34,10 +35,6 @@ div#wave_frame {
 p {
     font-family: 'Zilla Slab', serif;
     color: #272312;
-}
-
-svg {
-    
 }
 
 #info-text {

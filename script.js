@@ -17,7 +17,8 @@ $('#query').click(function() { //TODO: Shift to on page load, query streamflow a
 		 },
 	  error : function(XMLHttpRequest, textStatus, errorThrown) {
            $('#discharge-reading').text('unknown');
-		   animateWave(Math.random()*5);
+           var fake_discharges = [8,11,20,500,900];
+		   animateWave(fake_discharges[Math.floor(Math.random()*5)]);
 	  }
 	});
 });
@@ -33,15 +34,15 @@ wavePath = svg_canvas.path('M0,224L48,224C96,224,192,224,288,197.3C384,171,480,1
 
 function animateWave(discharge_reading) {
     console.log("discharge reading: " + discharge_reading);
-    //1-1024 -> 0–100 (flattens exponential)
-    dis_lin = Math.log2(discharge_reading)*10;
+    //6-1030 -> 0–100 (flattens exponential)
+    dis_lin = Math.log2(discharge_reading-5)*10;
     console.log("dis. linear: " + dis_lin);
     // 0–100 -> gradient percentage
     wavecolor = 'black'
     // 0–100 -> 5000–400 (smaller for higher discharges)
     wavespeed = 3000
-    // 0–100 -> 5–100% window height
-    waveheight_str = '200px'
+    // 0–100 -> 5–100%ish window height
+    waveheight_str = window.innerHeight*(dis_lin/100)
    //for getting a color from a gradient by a percentage, look into http://jsfiddle.net/jongobar/sNKWK/
     wavePath.attr({ fill: wavecolor, stroke:'none' });
 	wavePath.animate(wavespeed).ease('<>')
