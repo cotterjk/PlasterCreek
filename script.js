@@ -27,13 +27,21 @@ $('#query').click(function() { //TODO: Shift to on page load, query streamflow a
 	});
 });
 
-//Waves generated with getwaves.io
 var svg_canvas = SVG().addTo('#wave_frame').viewbox(0, 0, 1440, 320)
 svg_canvas.attr("preserveAspectRatio", 'none');
 svg_canvas.attr("width",'100%');
 
+//Waves generated with getwaves.io
 //Draw inital wave shape on svg canvas
-wavePath = svg_canvas.path('M0,224L48,224C96,224,192,224,288,197.3C384,171,480,117,576,96C672,75,768,85,864,96C960,107,1056,117,1152,138.7C1248,160,1344,192,1392,208L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z').attr({ fill: 'none', stroke:'red'})
+
+//SPARE WAVES
+//"M0,32L120,58.7C240,85,480,139,720,138.7C960,139,1200,85,1320,58.7L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
+
+// "M0,96L120,90.7C240,85,480,75,720,80C960,85,1200,107,1320,117.3L1440,128L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
+
+//"M0,160L120,144C240,128,480,96,720,80C960,64,1200,64,1320,64L1440,64L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
+
+wavePath = svg_canvas.path('M0,96L120,90.7C240,85,480,75,720,80C960,85,1200,107,1320,117.3L1440,128L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z').attr({ fill: 'none', stroke:'red'})
 
 function animateWave(discharge_reading) {
     console.log("discharge reading: " + discharge_reading);
@@ -51,7 +59,7 @@ function animateWave(discharge_reading) {
     // HEIGHT 0–100 -> 5–100%ish window height
     waveheight_str = window.innerHeight*(dis_lin/100)
     wavePath.animate(wavespeed).ease('<>')
-      .plot('M0,256L48,229.3C96,203,192,149,288,112C384,75,480,53,576,53.3C672,53,768,75,864,80C960,85,1056,75,1152,69.3C1248,64,1344,64,1392,64L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z')
+      .plot('M0,160L120,144C240,128,480,96,720,80C960,64,1200,64,1320,64L1440,64L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z')
       .loop(true, true)
     svg_canvas.attr("height", waveheight_str);
   }
