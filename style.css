@@ -27,12 +27,17 @@ p {
     color: #272312;
 }
 
+#streamflow-text-line {
+    border-top: 1px solid #262101;
+    margin-top: 30px;
+}
+
 #info-text {
     position: absolute;
     width: 100%;
     bottom: 0;
     z-index: 1;
-    padding: 25px;
+    padding: 30px 25px;
 }
 
 #streamflow-text {
@@ -65,4 +70,21 @@ p {
 
 #reading-time {
     font-weight: bold;
+}
+
+#logo-container {
+    width: 4em;
+    position: absolute;
+    top: 30px;
+    left:25px;
+}
+
+#logo-container svg{
+    stroke:#262101;
+    transition: ease .3s;
+}
+
+#logo-container svg:hover{
+    opacity: 0.5;
+    transition: ease .3s;
 }
