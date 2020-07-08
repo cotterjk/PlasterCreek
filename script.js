@@ -61,7 +61,6 @@ function animateWave(discharge_reading) {
       .loop(true, true)
     svg_canvas.attr("height", waveheight_str);
   }
-
 //Helper function chooses from between a gradient on a 0–1 scale
 //Taken from http://jsfiddle.net/vksn3yLL/
   function pickRGB(color1, color2, weight) {
@@ -74,3 +73,11 @@ function animateWave(discharge_reading) {
         Math.round(color1[2] * w1 + color2[2] * w2)];
     return rgb;
 }
+
+$('#about-X').on('click', function() {
+    $('#about-text-container').removeClass('show-about');
+});
+
+$('#about-mark-container').on('click', function() {
+    $('#about-text-container').addClass('show-about');
+});
