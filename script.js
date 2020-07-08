@@ -6,9 +6,7 @@ var dis_lin = 0;
 // USGS Ajax Query
 $('#query').click(function() { //TODO: Shift to on page load, query streamflow and animate from result
 	$.ajax({
-	  // url: "https://waterservices.usgs.gov/nwis/iv/?format=json&indent=on&sites=04119055&parameterCd=00060",
-      //DELIBERATE FAILURE TESTING
-      url:"https://www.fakeURL.com",
+      url:"https://waterservices.usgs.gov/nwis/iv/?format=json&indent=on&sites=04119055&parameterCd=00060",
 	  dataType: 'json',
 	  data: '',
 	  success: function(json){

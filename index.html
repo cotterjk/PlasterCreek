@@ -41,17 +41,28 @@
 			</svg>
 		</a>
 	</div>
-	<div id="about-container">
+	<div id="about-mark-container">
 		<p id="about-mark">?</p>
 	</div>
 	<div id="info-text">
 		<div class="col-sm-8">
-			<p id="streamflow-text">Plaster Creek is flowing at <br/> <span id="discharge-reading">11.6</span> cubic feet per second.</p>
+			<h1 id="streamflow-text">Plaster Creek is flowing at <br/> <span id="discharge-reading">11.6</span> cubic feet per second.</h1>
 		</div>
 		<div class="col-sm-4">
 			<p id="streamflow-details">Under 28th St. in Grand Rapids, MI<br/>(42.91280557, -85.650584)</br>last measured at <span id="reading-time">10pm</span> today</p>
 		</div>
 		<div id="streamflow-text-line" class="col-sm-12"></div>
+	</div>
+	<div id="about-text-container" class="col-sm-4">
+		<p class="about-text">Where the Plaster Creek trail opens to 28th Street, there’s an electrical box connected to a solar panel and labeled “USGS.” This is where I usually turn around to walk back home.</p>
+
+		<p class="about-text">I found that this is <a href="https://waterdata.usgs.gov/nwis/uv/?site_no=04119055">site 04119055</a>, one of over ten thousand streamgages maintained by the Water Services branch of the US Geological Survey under the <a href="https://www.usgs.gov/water-resources/groundwater-and-streamflow-information">Groundwater and Stream Flow Information Program.</a></p>
+
+		<p class="about-text">Hourly, the site measures the creek’s streamflow below the 28th St. bridge, and the USGS offers a well-documented system for automatically retrieving the data they collect. (They also offer very helpful IT support to any guy building a pet project with their API!)</p>
+
+		<p class="about-text">This page is a wrapper for that single streamflow number, which encompasses the present posture of the creek. The sensation of walking along the creek trail fluctuates drastically with rainfall and flow, and I wanted a remote pulse for that sensation to keep me in touch with the land around me.</p>
+
+		<p class="about-text">Here’s a bit of <a href="https://calvin.edu/plaster-creek-stewards/about/history/#history">history</a> of Plaster Creek from my alma mater.</p>
 	</div>
 
 	<!-- Add functionality script at end so everything is imported first I guess -->
