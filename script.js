@@ -20,9 +20,10 @@ $('#query').click(function() { //TODO: Shift to on page load, query streamflow a
 		 },
 	  error : function(XMLHttpRequest, textStatus, errorThrown) {
           //TODO actual error handling
+		  $('#error-heading').text(textStatus);
            $('#discharge-reading').text('unknown');
 		   $('#reading-time').text('an unknown time');
-		   animateWave(1);
+		   animateWave(6);
 
 		   // var fake_timestamp_response = "2020-07-09T17:00:00.000-05:00";
 		   // $('#reading-time').text(get12Hour(new Date(fake_timestamp_response)));

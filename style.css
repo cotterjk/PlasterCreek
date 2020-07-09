@@ -53,6 +53,10 @@ a:hover {
     padding: 30px 25px;
 }
 
+#error-heading{
+    color: #962121
+}
+
 #streamflow-text {
     color: white;
 }
