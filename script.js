@@ -6,21 +6,26 @@ var dis_lin = 0;
 // USGS Ajax Query
 $('#query').click(function() { //TODO: Shift to on page load, query streamflow and animate from result
 	$.ajax({
-      url:"https://waterservices.usgs.gov/nwis/iv/?format=json&indent=on&sites=04119055&parameterCd=00060",
+      // url:"https://waterservices.usgs.gov/nwis/iv/?format=json&indent=on&sites=04119055&parameterCd=00060",
+	  url: "https://www.fakeURL.com",
 	  dataType: 'json',
 	  data: '',
 	  success: function(json){
           //Display measurement
            $('#discharge-reading').text(json.value.timeSeries[0].values[0].value[0].value);
+		   $('#reading-time').text(get12Hour(new Date(json.value.timeSeries[0].values[0].value[0].dateTime)));
+
            //Animate by measurement
 		   animateWave(json.value.timeSeries[0].values[0].value[0].value);
 		 },
 	  error : function(XMLHttpRequest, textStatus, errorThrown) {
           //TODO actual error handling
            $('#discharge-reading').text('unknown');
-           //For testing, while I'm block to a 403 error
-           var fake_discharges = [2,8,11,20,500,900,1800];
-		   animateWave(fake_discharges[Math.floor(Math.random()*7)]);
+		   $('#reading-time').text('an unknown time');
+		   animateWave(1);
+
+		   // var fake_timestamp_response = "2020-07-09T17:00:00.000-05:00";
+		   // $('#reading-time').text(get12Hour(new Date(fake_timestamp_response)));
 	  }
 	});
 });
@@ -72,6 +77,17 @@ function animateWave(discharge_reading) {
         Math.round(color1[1] * w1 + color2[1] * w2),
         Math.round(color1[2] * w1 + color2[2] * w2)];
     return rgb;
+}
+
+//YYYY-MM-DDTHH:MM:SS.SSS -> HH am/pm
+function get12Hour(dateTime) {
+	var timestamp_hour = dateTime.getHours();
+	if (timestamp_hour > 12) {
+		timestamp_hour -= 12;
+		return timestamp_hour + " pm";
+	} else {
+		return timestamp_hour + " am";
+	}
 }
 
 $('#about-X').on('click', function() {
