@@ -22,6 +22,11 @@ div#wave_frame {
     z-index: -1;
 }
 
+div#wave_frame > svg {
+    position: absolute;
+    bottom:0;
+}
+
 h1, p {
     margin: 0;
     font-family: 'Zilla Slab', serif;
