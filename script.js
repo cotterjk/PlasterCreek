@@ -56,9 +56,9 @@ function animateWave(discharge_reading) {
     wavecolor = pickRGB([26,41,62], [165,221,237], dis_lin/100);
     console.log("wavecolor: " + 'rgb('+wavecolor.join()+')');
     wavePath.attr({ fill: 'rgb('+wavecolor.join()+')', stroke:'none'});
-    // SPEED 0–100 -> 5000–700 (smaller for higher discharges)
+    // SPEED 0–100 -> 7000–1200 (smaller for higher discharges)
     //Wavespeed only updates animation once, only changes on page reload
-    wavespeed = 5000-(dis_lin*((5000-700)/100))
+    wavespeed = 7000-(dis_lin*((7000-1200)/100))
     console.log("wavespeed: " + wavespeed);
     // HEIGHT 0–100 -> 5–100%ish window height
     waveheight_str = window.innerHeight*(dis_lin/100)
