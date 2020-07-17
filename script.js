@@ -12,6 +12,7 @@ $(document).ready(function() {
 	  data: '',
 	  success: function(json){
           //Display measurement
+		  $('#loading-text').hide();
            $('#discharge-reading').text(json.value.timeSeries[0].values[0].value[0].value);
 		   $('#reading-time').text(get12Hour(new Date(json.value.timeSeries[0].values[0].value[0].dateTime)));
 
