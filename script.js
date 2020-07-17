@@ -45,7 +45,7 @@ svg_canvas.attr("width",'100%');
 
 //"M0,160L120,144C240,128,480,96,720,80C960,64,1200,64,1320,64L1440,64L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
 
-wavePath = svg_canvas.path('M0,96L120,90.7C240,85,480,75,720,80C960,85,1200,107,1320,117.3L1440,128L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z').attr({ fill: 'none', stroke:'red'})
+wavePath = svg_canvas.path('M0,64L120,69.3C240,75,480,85,720,80C960,75,1200,53,1320,42.7L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z').attr({ fill: 'none', stroke:'red'})
 
 function animateWave(discharge_reading) {
     console.log("discharge reading: " + discharge_reading);
@@ -63,7 +63,7 @@ function animateWave(discharge_reading) {
     // HEIGHT 0–100 -> 5–100%ish window height
     waveheight_str = window.innerHeight*(dis_lin/100)
     wavePath.animate(wavespeed).ease('<>')
-      .plot('M0,160L120,144C240,128,480,96,720,80C960,64,1200,64,1320,64L1440,64L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z')
+      .plot('M0,96L120,85.3C240,75,480,53,720,48C960,43,1200,53,1320,58.7L1440,64L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z')
       .loop(true, true)
     svg_canvas.attr("height", waveheight_str);
   }
