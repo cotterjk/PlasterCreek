@@ -62,6 +62,13 @@ a:visited {
     padding: 30px 25px;
 }
 
+#loading-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 #error-heading{
     color: #962121
 }

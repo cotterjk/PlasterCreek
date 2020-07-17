@@ -23,6 +23,7 @@ $(document).ready(function() {
 		  $('#error-heading').text(textStatus);
            $('#discharge-reading').text('unknown');
 		   $('#reading-time').text('an unknown time');
+		   $('#loading-text').hide();
 		   animateWave(6);
 
 		   // var fake_timestamp_response = "2020-07-09T17:00:00.000-05:00";
@@ -45,7 +46,7 @@ svg_canvas.attr("width",'100%');
 
 //"M0,160L120,144C240,128,480,96,720,80C960,64,1200,64,1320,64L1440,64L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
 
-wavePath = svg_canvas.path('M0,64L120,69.3C240,75,480,85,720,80C960,75,1200,53,1320,42.7L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z').attr({ fill: 'none', stroke:'red'})
+wavePath = svg_canvas.path('M0,64L120,69.3C240,75,480,85,720,80C960,75,1200,53,1320,42.7L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z').attr({ fill: 'none', stroke:'none'})
 
 function animateWave(discharge_reading) {
     console.log("discharge reading: " + discharge_reading);
