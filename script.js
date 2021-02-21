@@ -13,11 +13,11 @@ $(document).ready(function() {
 	  success: function(json){
           //Display measurement
 		  $('#loading-text').hide();
-		  if json.value.timeSeries[0].values[0].value[0].qualifiers.includes("Ice") {
-			  console.log("Ice matched in json response qualifiers section.");
-		  }
-           $('#discharge-reading').text(json.value.timeSeries[0].values[0].value[0].value);
-		   $('#reading-time').text(get12Hour(new Date(json.value.timeSeries[0].values[0].value[0].dateTime)));
+		if (json.value.timeSeries[0].values[0].value[0].qualifiers.includes("Ice")) {
+			console.log("Ice detected by checkIce in json response qualifiers");
+		}
+          $('#discharge-reading').text(json.value.timeSeries[0].values[0].value[0].value);
+		  $('#reading-time').text(get12Hour(new Date(json.value.timeSeries[0].values[0].value[0].dateTime)));
 		   // var fake_timestamp_response = "2021-02-21T10:00:01.000-03:00";
 		   // $('#reading-time').text(get12Hour(new Date(fake_timestamp_response)));
 
