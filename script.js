@@ -13,8 +13,13 @@ $(document).ready(function() {
 	  success: function(json){
           //Display measurement
 		  $('#loading-text').hide();
+		  if json.value.timeSeries[0].values[0].value[0].qualifiers.includes("Ice") {
+			  console.log("Ice matched in json response qualifiers section.");
+		  }
            $('#discharge-reading').text(json.value.timeSeries[0].values[0].value[0].value);
 		   $('#reading-time').text(get12Hour(new Date(json.value.timeSeries[0].values[0].value[0].dateTime)));
+		   // var fake_timestamp_response = "2021-02-21T10:00:01.000-03:00";
+		   // $('#reading-time').text(get12Hour(new Date(fake_timestamp_response)));
 
            //Animate by measurement
 		   animateWave(json.value.timeSeries[0].values[0].value[0].value);
@@ -26,9 +31,6 @@ $(document).ready(function() {
 		   $('#reading-time').text('an unknown time');
 		   $('#loading-text').hide();
 		   animateWave(6);
-
-		   // var fake_timestamp_response = "2020-07-09T17:00:00.000-05:00";
-		   // $('#reading-time').text(get12Hour(new Date(fake_timestamp_response)));
 	  }
 	});
 });
@@ -89,7 +91,11 @@ function get12Hour(dateTime) {
 		timestamp_hour -= 12;
 		return timestamp_hour + " pm";
 	} else {
-		return timestamp_hour + " am";
+		if (timestamp_hour == 12) {
+			return "12 pm";
+		} else {
+			return timestamp_hour + " am";
+		}
 	}
 }
 
