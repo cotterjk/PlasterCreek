@@ -14,9 +14,11 @@ $(document).ready(function() {
           //Display measurement
 		  $('#loading-text').hide();
 		if (json.value.timeSeries[0].values[0].value[0].qualifiers.includes("Ice")) {
-			console.log("Ice detected by checkIce in json response qualifiers");
-		}
+			console.log("Ice detected in json response qualifiers");
+			$('#streamflow-text').text("Plaster Creek is frozen over.");
+		} else {
           $('#discharge-reading').text(json.value.timeSeries[0].values[0].value[0].value);
+		}
 		  $('#reading-time').text(get12Hour(new Date(json.value.timeSeries[0].values[0].value[0].dateTime)));
 		   // var fake_timestamp_response = "2021-02-21T10:00:01.000-03:00";
 		   // $('#reading-time').text(get12Hour(new Date(fake_timestamp_response)));
